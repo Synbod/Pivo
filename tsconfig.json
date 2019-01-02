@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outDir": "./dist",
+    "sourceMap": true
+  },
+  "include": ["js/**/*"],
+  "plugins": [
+    {
+      "name": "typescript-tslint-plugin"
+    }
+  ]
+}
