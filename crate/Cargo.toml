@@ -1,14 +1,14 @@
 [package]
 authors = ["Chris Chou <chhschou@gmail.com>"]
-name = "rust-webpack"
+name = "pivot"
 version = "0.0.1"
 
-[lib]
-crate-type = ["cdylib"]
+#[lib]
+#crate-type = ["cdylib"]
 
 [dependencies]
 cfg-if = "0.1.5"
-wasm-bindgen = "0.2.25"
+stdweb = "*"
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
@@ -21,15 +21,6 @@ console_error_panic_hook = { version = "0.1.5", optional = true }
 # allocator, however.
 wee_alloc = { version = "0.4.2", optional = true }
 
-[dependencies.web-sys]
-version = "0.3"
-features = [
-  "Document",
-  "Element",
-  "HtmlElement",
-  "Node",
-  "Window",
-]
 
 [features]
-default-features = ["console_error_panic_hook"]
+# default-features = ["console_error_panic_hook"]

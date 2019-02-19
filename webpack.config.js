@@ -30,8 +30,8 @@ module.exports = {
       template: 'index.html',
     }),
 
-    new WasmPackPlugin({
-      crateDirectory: path.resolve(__dirname, 'crate'),
-    }),
+    // new WasmPackPlugin({
+    //   crateDirectory: path.resolve(__dirname, 'crate'),
+    // }),
   ],
 };
