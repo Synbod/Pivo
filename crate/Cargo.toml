@@ -1,12 +1,8 @@
 [package]
-authors = ["The RustWasm Developers"]
-categories = ["wasm"]
-description = "My super awesome Rust, WebAssembly, and Webpack project!"
+authors = ["Chris Chou <chhschou@gmail.com>"]
+name = "pivot"
+version = "0.0.1"
 license = "Apache-2.0/MIT"
-name = "rust-webpack"
-readme = "./README.md"
-repository = "https://github.com/rustwasm/rust-webpack-template"
-version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]

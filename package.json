@@ -1,21 +1,91 @@
 {
-  "author": "Nick Fitzgerald <nfitzgerald@mozilla.com>",
-  "name": "create-rust-webpack",
-  "version": "0.1.5",
-  "repository": "https://github.com/rustwasm/rust-webpack-template",
-  "license": "(MIT OR Apache-2.0)",
+  "name": "@synbod/synbod-pivot-table",
+  "version": "0.0.1",
+  "description": "Pivot table made with web platform technologies",
+  "author": "Chris Chou <chhschou@gmail.com>",
+  "license": "Apache-2.0",
   "scripts": {
+    "test": "jest",
     "start": "webpack-dev-server -d",
     "build": "webpack"
   },
-  "bin": {
-    "create-rust-webpack": ".bin/create-rust-webpack.js"
+  "repository": "https://github.com/Synbod/synbod-pivot-table",
+  "bugs": {
+    "url": "https://github.com/Synbod/synbod-pivot-table/issues"
+  },
+  "homepage": "https://github.com/Synbod/synbod-pivot-table#readme",
+  "keywords": [
+    "pivottable",
+    "std",
+    "wasm",
+    "webassembly",
+    "rust",
+    "javascript"
+  ],
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "jest": {
+    "runner": "@jest-runner/electron",
+    "testEnvironment": "@jest-runner/electron/environment",
+    "testMatch": [
+      "**/__tests__/**/*.(ts|js)?(x)",
+      "**/?(*.)+(spec|test).(ts|js)?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": []
+  },
+  "editorconfig": {
+    "root": true,
+    "rules": {
+      "*": {
+        "indent_style": "space",
+        "indent_size": "2",
+        "end_of_line": "lf",
+        "charset": "utf-8",
+        "trim_trailing_whitespace": true,
+        "insert_final_newline": true,
+        "max_line_length": "120"
+      },
+      "*.{md,markdown}": {
+        "trim_trailing_whitespace": false
+      }
+    }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "arrowParens": "always"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "0.2.3",
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.16.4",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.0"
+  },
+  "dependencies": {
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0"
   }
 }
