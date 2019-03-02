@@ -74,11 +74,18 @@
     "arrowParens": "always"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@jest-runner/electron": "^1.1.1",
     "@wasm-tool/wasm-pack-plugin": "0.2.3",
+    "babel-jest": "^24.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.1.0",
     "prettier": "^1.16.4",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
