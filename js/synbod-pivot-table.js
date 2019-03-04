@@ -1,11 +1,20 @@
-import { html, render } from 'lit-html';
+import { LitElement, html } from 'lit-element';
 import { until } from 'lit-html/directives/until.js';
+import { repeat } from 'lit-html/directives/repeat';
+import normalizeStyle from 'normalize.css';
 
-import './header';
-import './body';
-import './footer';
+import input from './MOCK_DATA.json';
+
+import './pt-header';
+import './pt-body';
+import './pt-footer';
+
+console.log('input', input);
 
 const style = html`
+  <style>
+    ${normalizeStyle}
+  </style>
   <style>
     *,
     *:before,
@@ -14,13 +23,20 @@ const style = html`
     }
 
     .container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .grid-container {
+      width: 100%;
+      max-height: 100vh;
+      position: relative;
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
     }
+
+    .header {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      background-color: red;
+    }
+
     .cell {
       flex: 0 0 calc(100% / 7);
       border: 1px solid #ddd;
@@ -31,39 +47,40 @@ const style = html`
   </style>
 `;
 
-class SynbodPivotTable extends HTMLElement {
+class SynbodPivotTable extends LitElement {
   set config(newConfig) {
     this._config = newConfig;
-    this._render();
+    this.render();
   }
 
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-    this._render();
   }
 
-  _render() {
-    render(
-      html`
-        ${style}
-        <div class="grid-container">
-          ${until(
-            import('../crate/pkg/pivot').then((module) => {
-              return html`
-                <pt-header></pt-header>
-                <pt-body></pt-body>
-                <pt-footer></pt-footer>
-              `;
-            }),
-            html`
-              <span>Loading...</span>
-            `
-          )}
-        </div>
-      `,
-      this.shadowRoot
-    );
+  render() {
+    return html`
+      ${style}
+      ${until(
+        import('../crate/pkg/pivot').then((module) => {
+          return html`
+            <div class="container">
+              ${input.map(
+                (item) =>
+                  html`
+                    <div class="header">
+                      <div>${item.first_name}</div>
+                      <div>${item.last_name}</div>
+                    </div>
+                  `
+              )}
+            </div>
+          `;
+        }),
+        html`
+          <span>Loading...</span>
+        `
+      )}
+    `;
   }
 }
 
