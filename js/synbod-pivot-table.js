@@ -5,12 +5,6 @@ import normalizeStyle from 'normalize.css';
 
 import input from './MOCK_DATA.json';
 
-import './pt-header';
-import './pt-body';
-import './pt-footer';
-
-console.log('input', input);
-
 const style = html`
   <style>
     ${normalizeStyle}

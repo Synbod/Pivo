@@ -23,14 +23,6 @@
     "rust",
     "javascript"
   ],
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-syntax-dynamic-import"
-    ]
-  },
   "jest": {
     "runner": "@jest-runner/electron",
     "testEnvironment": "@jest-runner/electron/environment",
@@ -55,7 +47,11 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!(lit-html|lit-element)/)"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/js/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/js/__mocks__/styleMock.js"
+    }
   },
   "editorconfig": {
     "root": true,
@@ -89,6 +85,7 @@
     "@jest-runner/electron": "^1.1.1",
     "@wasm-tool/wasm-pack-plugin": "0.2.3",
     "babel-jest": "^24.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "^2.1.0",
     "electron": "^4.0.6",
     "enzyme": "^3.9.0",
