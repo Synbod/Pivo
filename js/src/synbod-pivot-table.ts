@@ -1,14 +1,8 @@
 import { LitElement, html } from 'lit-element';
 import { until } from 'lit-html/directives/until.js';
 import { repeat } from 'lit-html/directives/repeat';
-import normalizeStyle from 'normalize.css';
-
-import input from './MOCK_DATA.json';
 
 const style = html`
-  <style>
-    ${normalizeStyle}
-  </style>
   <style>
     *,
     *:before,
@@ -42,6 +36,7 @@ const style = html`
 `;
 
 class SynbodPivotTable extends LitElement {
+  private _config: any;
   set config(newConfig) {
     this._config = newConfig;
     this.render();
@@ -55,18 +50,10 @@ class SynbodPivotTable extends LitElement {
     return html`
       ${style}
       ${until(
-        import('../crate/pkg/pivot').then((module) => {
+        import('synbod-pivot-table-crate-pkg').then((module) => {
           return html`
             <div class="container">
-              ${input.map(
-                (item) =>
-                  html`
-                    <div class="header">
-                      <div>${item.first_name}</div>
-                      <div>${item.last_name}</div>
-                    </div>
-                  `
-              )}
+              test text
             </div>
           `;
         }),

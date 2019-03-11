@@ -49,8 +49,8 @@
       "node_modules/(?!(lit-html|lit-element)/)"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/js/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/js/__mocks__/styleMock.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/js/tests/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/js/tests/__mocks__/styleMock.js"
     }
   },
   "editorconfig": {
@@ -96,8 +96,11 @@
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.1.0",
     "prettier": "^1.16.4",
+    "rimraf": "^2.6.3",
     "to-string-loader": "^1.1.5",
     "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.3.3333",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",

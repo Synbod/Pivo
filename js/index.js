@@ -1,5 +1,1 @@
-import './synbod-pivot-table';
-
-// import("../crate/pkg").then(module => {
-//   module.run();
-// });
+import './src/synbod-pivot-table';
