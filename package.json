@@ -87,7 +87,7 @@
     "babel-jest": "^24.1.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "^2.1.0",
-    "electron": "^4.0.6",
+    "electron": "^4.0.8",
     "enzyme": "^3.9.0",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.14.1",
